@@ -1,3 +1,3 @@
 FROM nginx:1.29.7
-RUN rm -f /user/share/nginx/html/index.html  #before copying, remove existing index.html
-COPY index.html /user/share/nginx/html/
+RUN rm -f /usr/share/nginx/html/index.html  #before copying, remove existing index.html
+COPY index.html /usr/share/nginx/html/
