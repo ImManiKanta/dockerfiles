@@ -52,3 +52,9 @@ resource "aws_iam_instance_profile" "main" {
   name = "RoboshopEKSCluster"
   role = aws_iam_role.main.name
 }
+
+resource "aws_eks_access_entry" "main" {
+  cluster_name      = "roboshop" #cluster name hardcoded
+  principal_arn     = aws_iam_role.main.arn
+  type              = "STANDARD"
+}
