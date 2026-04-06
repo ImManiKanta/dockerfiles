@@ -34,5 +34,6 @@ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$P
 #create eks cluster
 cd /home/ec2-user/
 git clone https://github.com/ImManiKanta/eksctl.git
+chown ec2-user:ec2-user -R eksctl
 cd eksctl/
 eksctl create cluster --config-file=eks.yaml >> EKSClusterOutput.log
