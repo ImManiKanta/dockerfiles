@@ -54,5 +54,8 @@ sudo -u ec2-user git clone https://github.com/ImManiKanta/eksctl.git
 cd eksctl
 sudo -u ec2-user /usr/local/bin/eksctl create cluster -f eks.yaml
 
+#k9s install
+curl -sS https://webi.sh/k9s | bash
+
 # Authenticate kubectl with the cluster
 aws eks update-kubeconfig --region us-east-1 --name roboshop
