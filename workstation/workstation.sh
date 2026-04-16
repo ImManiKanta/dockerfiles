@@ -55,7 +55,9 @@ cd eksctl
 sudo -u ec2-user /usr/local/bin/eksctl create cluster -f eks.yaml
 
 #k9s install
-curl -sS https://webi.sh/k9s | bash
+curl -sLO "https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz"
+tar -xzf k9s_Linux_amd64.tar.gz -C /tmp && rm k9s_Linux_amd64.tar.gz
+sudo install -m 0755 /tmp/k9s /usr/local/bin && rm /tmp/k9s
 
 # Authenticate kubectl with the cluster
-aws eks update-kubeconfig --region us-east-1 --name roboshop
+sudo -u ec2-user aws eks update-kubeconfig --region us-east-1 --name roboshop
